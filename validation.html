@@ -93,6 +93,15 @@ if ($_SERVER["REQUEST METHOD"] == "POST") {
 
 }
 
+function test_input($data) {
+
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = specialhtmlchars($data);
+  return data;
+
+}
+
 
 
 ?>
