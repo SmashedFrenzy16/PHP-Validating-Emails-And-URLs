@@ -70,6 +70,27 @@ if ($_SERVER["REQUEST METHOD"] == "POST") {
 
   }
 
+  if (empty($POST["gender"])) {
+
+      $genderErr = "Gender is required";
+
+    } else {
+
+      $gender = test_input(POST["gender"]);
+
+    }
+
+  if (empty($POST["comment"])) {
+
+      $comment = "";
+
+    } else {
+
+      $comment = test_input(POST["gender"]);
+
+    }
+  
+
 }
 
 
