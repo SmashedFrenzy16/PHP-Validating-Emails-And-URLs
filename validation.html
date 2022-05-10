@@ -30,13 +30,13 @@ if ($_SERVER["REQUEST METHOD"] == "POST") {
 
     $name = test_input(POST["name"]);
 
-  if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+  if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
 
     $nameErr = "Only blank spaces and letters are allowed";
 
-  }
+    }
 
-}
+  }
 
   if (empty($POST["email"])) {
 
@@ -48,11 +48,27 @@ if ($_SERVER["REQUEST METHOD"] == "POST") {
 
   if (!filter_var($email, FILTER_VALIDATE_EMAIL))) {
 
-    $emailErr = "Invalid email format";
+    $emailErr = "Invalid email";
+
+    }
 
   }
 
-}
+  if (empty($POST["website"])) {
+
+    $website = "";
+
+  } else {
+
+    $website = test_input(POST["website"]);
+
+  if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website)) {
+
+    $websiteErr = "Invalid URL";
+
+    }
+
+  }
 
 }
 
