@@ -1,2 +1,2 @@
 # PHP Validating Emails And URLs
-This PHP program validates email addresses and URLs.
+This PHP program (embedded into a HTML document) validates email addresses and URLs.
